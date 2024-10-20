@@ -17,7 +17,7 @@ function bypassLink() {
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            if (data.result) {
+            if (data.status === 'success') {
                 resultDiv.innerHTML = `
                     <p><strong>Key:</strong> <span id="bypassedKey">${data.result || 'N/A'}</span></p>
                 `;
@@ -40,4 +40,4 @@ function copyKey() {
     }, function() {
         copyMessage.innerHTML = 'Failed to copy key.';
     });
-               }
+}
