@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BYPASS</title>
     <style>
+        html, body {
+            height: 100%; /* Ensure the body takes up the full height */
+            margin: 0; /* Remove default margin */
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://cdn.discordapp.com/attachments/1282858735408255098/1297555784338771998/eaae95f9c7ec0542a7b640fb5e316d1f.jpg?ex=67165a7e&is=671508fe&hm');
-            background-size: cover; /* Makes the background cover the entire screen */
-            background-repeat: no-repeat; /* Prevents the background from repeating */
-            background-attachment: fixed; /* Keeps the background fixed during scrolling */
-            background-position: center; /* Centers the background image */
             text-align: center;
-            margin-top: 50px;
+        }
+
+        .bg {
+            /* The image used */
+            background-image: url('https://cdn.discordapp.com/attachments/1282858735408255098/1297555784338771998/eaae95f9c7ec0542a7b640fb5e316d1f.jpg?ex=67165a7e&is=671508fe&hm=c961421d77bcf40879636b24f806697037d7a3e4fa3467c7f535e5a6d93d0218&');
+            
+            /* Full height */
+            height: 100%;
+
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover; /* Cover the whole area */
         }
 
         .container {
@@ -23,6 +35,9 @@
             margin: auto;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative; /* Allow absolute positioning of inner elements */
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%); /* Adjust for the height of the container */
         }
 
         input[type="text"] {
@@ -78,7 +93,7 @@
         }
     </style>
 </head>
-<body>
+<body class="bg">
 
 <div class="container">
     <h1>BYPASS</h1>
