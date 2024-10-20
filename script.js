@@ -19,7 +19,7 @@ function bypassLink() {
         .then(data => {
             if (data.status === 'success') {
                 resultDiv.innerHTML = `
-                    <p><strong>Key:</strong> <span id="bypassedKey">${data.result || 'N/A'}</span></p>
+                    <p><strong>Key:</strong> <span id="bypassedKey">${data.key || 'N/A'}</span></p>
                 `;
                 copyButton.style.display = 'inline-block';
             } else {
