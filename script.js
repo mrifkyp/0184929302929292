@@ -5,39 +5,38 @@ function bypassLink() {
     var copyButton = document.getElementById('copyButton');
     var copyMessage = document.getElementById('copyMessage');
 
+    // Bersihkan hasil dan pesan sebelumnya
     resultDiv.innerHTML = '';
     copyButton.style.display = 'none';
     copyMessage.innerHTML = '';
 
+    // Periksa apakah input kosong
     if (link === '') {
         resultDiv.innerHTML = '<p class="error">Please enter a URL.</p>';
         return;
     }
 
+    // Ambil link bypass
     fetch(apiUrl)
-        .then(response => response.json())
+        .then(response => {
+            // Periksa apakah respons ok (status dalam rentang 200-299)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
-            if (data.status === 'success') {
+            // Periksa struktur respons API
+            if (data.result) {
                 resultDiv.innerHTML = `
-                    <p><strong>Key:</strong> <span id="bypassedKey">${data.key || 'N/A'}</span></p>
+                    <p><strong>Key:</strong> <span id="bypassedKey">${data.result || 'N/A'}</span></p>
                 `;
-                copyButton.style.display = 'inline-block';
+                copyButton.style.display = 'inline-block'; // Tampilkan tombol salin
             } else {
-                resultDiv.innerHTML = `<p class="error">Error: ${data.error}</p>`;
+                resultDiv.innerHTML = `<p class="error">Error: ${data.error || 'Unknown error'}</p>`;
             }
         })
         .catch(error => {
             resultDiv.innerHTML = `<p class="error">An error occurred: ${error.message}</p>`;
         });
-}
-
-function copyKey() {
-    var keyText = document.getElementById('bypassedKey').innerText;
-    var copyMessage = document.getElementById('copyMessage');
-
-    navigator.clipboard.writeText(keyText).then(function() {
-        copyMessage.innerHTML = 'Key copied to clipboard!';
-    }, function() {
-        copyMessage.innerHTML = 'Failed to copy key.';
-    });
 }
