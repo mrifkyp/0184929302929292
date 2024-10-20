@@ -21,7 +21,7 @@ function bypassLink() {
         .then(response => {
             // Periksa apakah respons ok (status dalam rentang 200-299)
             if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+                throw new Error(`HTTP error! status: ${response.result}`);
             }
             return response.json();
         })
