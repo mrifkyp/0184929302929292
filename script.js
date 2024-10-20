@@ -1,6 +1,6 @@
 function bypassLink() {
     var link = document.getElementById('linkInput').value;
-    var apiUrl = `https://bypass-all.vercel.app/bypass?url=${encodeURIComponent(link)}&apikey=DemonOnTop`;
+    var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}`;
     var resultDiv = document.getElementById('result');
     var copyButton = document.getElementById('copyButton');
     var copyMessage = document.getElementById('copyMessage');
