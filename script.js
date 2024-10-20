@@ -1,4 +1,6 @@
-function bypassLink() {
+async function bypassLink() {
+    console.log("Tombol ditekan!"); // Memastikan fungsi dijalankan
+    
     var link = document.getElementById('linkInput').value;
     var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}`;
     var resultDiv = document.getElementById('result');
@@ -16,20 +18,39 @@ function bypassLink() {
         return;
     }
 
-    // Use Axios to fetch the bypass link
-    axios.get(apiUrl)
-        .then(response => {
-            // Check the API response structure
-            if (response.data.status === 'success') {
-                resultDiv.innerHTML = `
-                    <p><strong>Key:</strong> <span id="bypassedKey">${response.data.result || 'N/A'}</span></p>
-                `;
-                copyButton.style.display = 'inline-block'; // Show copy button
-            } else {
-                resultDiv.innerHTML = `<p class="error">Error: ${response.data.error || 'Unknown error'}</p>`;
-            }
-        })
-        .catch(error => {
-            resultDiv.innerHTML = `<p class="error">An error occurred: ${error.message}</p>`;
-        });
+    try {
+        console.log("Fetching data from API: " + apiUrl); // Log API URL
+        
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log(data); // Log API response data
+
+        if (data.status === 'success') {
+            resultDiv.innerHTML = `
+                <p><strong>Key:</strong> <span id="bypassedKey">${data.result || 'N/A'}</span></p>
+            `;
+            copyButton.style.display = 'inline-block'; // Show copy button
+        } else {
+            resultDiv.innerHTML = `<p class="error">Error: ${data.error || 'Unknown error'}</p>`;
+        }
+    } catch (error) {
+        resultDiv.innerHTML = `<p class="error">An error occurred: ${error.message}</p>`;
+        console.error(error); // Log error to the console
+    }
+}
+
+function copyKey() {
+    var keyText = document.getElementById('bypassedKey').innerText;
+    var copyMessage = document.getElementById('copyMessage');
+
+    // Copy the key to clipboard
+    navigator.clipboard.writeText(keyText).then(function() {
+        copyMessage.innerHTML = 'Key copied to clipboard!';
+    }).catch(function() {
+        copyMessage.innerHTML = 'Failed to copy key.';
+    });
 }
