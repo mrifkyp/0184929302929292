@@ -1,7 +1,7 @@
 function bypassLink() {
     var link = document.getElementById('linkInput').value; // Ambil nilai dari input
     var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}`; // URL API
-    var resultDiv = document.getElementById('key'); // Elemen untuk menampilkan hasil
+    var resultDiv = document.getElementById('result'); // Elemen untuk menampilkan hasil
     var copyButton = document.getElementById('copyButton'); // Tombol untuk menyalin kunci
     var copyMessage = document.getElementById('copyMessage'); // Pesan untuk menampilkan hasil salinan
 
