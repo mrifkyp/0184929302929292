@@ -22,7 +22,6 @@ async function bypassLink() {
     console.log("Tombol ditekan!"); // Memastikan fungsi dijalankan
     
     var link = document.getElementById('linkInput').value;
-    var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}&captcha=${encodeURIComponent(hcaptchaResponse)}`;
     var resultDiv = document.getElementById('result');
     var copyButton = document.getElementById('copyButton');
     var copyMessage = document.getElementById('copyMessage');
@@ -44,6 +43,9 @@ async function bypassLink() {
         resultDiv.innerHTML = '<p class="error">Please complete the hCaptcha.</p>';
         return;
     }
+
+    // Buat URL API setelah mendapatkan hcaptchaResponse
+    var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}&captcha=${encodeURIComponent(hcaptchaResponse)}`;
 
     try {
         console.log("Fetching data from API: " + apiUrl); // Log API URL
