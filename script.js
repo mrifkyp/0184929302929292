@@ -1,3 +1,15 @@
+const supportItems = ["relzhub", "Fluxus", "Linkvertise", "sub2unlock", "Mboost", "Pastebin", "Pastedrop", "Mediafire", "Cryptic", "Codex", "Delta", "Boost.ink", "Link-center", "Link-target", "Social-unlock", "Loot-link"];
+let currentSupportIndex = 0;
+
+function rotateSupport() {
+    const supportMessageDiv = document.getElementById('support-message');
+    currentSupportIndex = (currentSupportIndex + 1) % supportItems.length;
+    supportMessageDiv.textContent = 'Support: ' + supportItems[currentSupportIndex];
+}
+
+// Panggil fungsi rotasi setiap 2 detik
+setInterval(rotateSupport, 2000);
+
 async function bypassLink() {
     console.log("Tombol ditekan!"); // Memastikan fungsi dijalankan
     
@@ -30,9 +42,9 @@ async function bypassLink() {
         console.log(data.result); // Log API response data
 
         resultDiv.innerHTML = `
-                <p><strong>Key:</strong> <span id="bypassedKey">${data.result}</span></p>
-            `;
-            copyButton.style.display = 'inline-block'; // Show copy button
+            <p><strong>Key:</strong> <span id="bypassedKey">${data.result}</span></p>
+        `;
+        copyButton.style.display = 'inline-block'; // Show copy button
     } catch (error) {
         resultDiv.innerHTML = `<p class="error">An error occurred: ${error.message}</p>`;
         console.error(error); // Log error to the console
@@ -50,3 +62,6 @@ function copyKey() {
         copyMessage.innerHTML = 'Failed to copy key.';
     });
 }
+
+// Panggil fungsi loadHCaptcha saat halaman dimuat
+window.onload = loadHCaptcha;
