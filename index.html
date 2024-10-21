@@ -92,9 +92,6 @@
             font-weight: bold;
         }
     </style>
-
-    <!-- Tambahkan hCaptcha library -->
-    <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body class="bg">
 
@@ -102,9 +99,6 @@
     <h1>BYPASS</h1>
     <p>Enter the URL:</p>
     <input type="text" id="linkInput" placeholder="Enter the URL here">
-    <br>
-    <!-- Elemen hCaptcha -->
-    <div id="hcaptcha-container"></div>
     <br>
     <button onclick="bypassLink()">Bypass</button>
 
@@ -114,8 +108,12 @@
 
     <!-- Support message div -->
     <div id="support-message">Support: relzhub</div>
+
+    <!-- Hcaptcha -->
+    <div class="h-captcha" data-sitekey="[SITE_KEY]" id="captcha"></div>
 </div>
 
-<script src="script.js"></script>
+<script src="https://hcaptcha.com/1/api.js" async defer></script>
+<script src="script.js"></script> <!-- Pisahkan skrip JavaScript ke file ini -->
 </body>
 </html>
