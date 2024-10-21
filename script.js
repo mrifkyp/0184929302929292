@@ -27,16 +27,12 @@ async function bypassLink() {
         }
 
         const data = await response.json();
-        console.log(data); // Log API response data
+        console.log(data.result); // Log API response data
 
-        if (data.status === 'success') {
-            resultDiv.innerHTML = `
-                <p><strong>Key:</strong> <span id="bypassedKey">${data.result || 'N/A'}</span></p>
+        resultDiv.innerHTML = `
+                <p><strong>Key:</strong> <span id="bypassedKey">${data.result}</span></p>
             `;
             copyButton.style.display = 'inline-block'; // Show copy button
-        } else {
-            resultDiv.innerHTML = `<p class="error">Error: ${data.error || 'Unknown error'}</p>`;
-        }
     } catch (error) {
         resultDiv.innerHTML = `<p class="error">An error occurred: ${error.message}</p>`;
         console.error(error); // Log error to the console
