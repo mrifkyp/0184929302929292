@@ -92,6 +92,7 @@
             font-weight: bold;
         }
     </style>
+    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body class="bg">
 
@@ -105,15 +106,10 @@
     <div id="result"></div>
     <button id="copyButton" style="display: none;" onclick="copyKey()">Copy Key</button>
     <p id="copyMessage"></p>
-
-    <!-- Support message div -->
+    
     <div id="support-message">Support: relzhub</div>
-
-    <!-- Hcaptcha -->
-    <div class="h-captcha" data-sitekey="[SITE_KEY]" id="captcha"></div>
 </div>
 
-<script src="https://hcaptcha.com/1/api.js" async defer></script>
 <script src="script.js"></script> <!-- Pisahkan skrip JavaScript ke file ini -->
 </body>
 </html>
