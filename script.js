@@ -17,21 +17,12 @@ function loadHCaptcha() {
     hcaptchaContainer.innerHTML = `<div class="h-captcha" data-sitekey="${sitekey}"></div>`;
 }
 
-// Fungsi validasi URL
-function isValidURL(string) {
-    try {
-        new URL(string);
-        return true;
-    } catch (_) {
-        return false;  
-    }
-}
-
 // Fungsi bypass link
 async function bypassLink() {
     console.log("Tombol ditekan!"); // Memastikan fungsi dijalankan
     
     var link = document.getElementById('linkInput').value;
+    var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}`;
     var resultDiv = document.getElementById('result');
     var copyButton = document.getElementById('copyButton');
     var copyMessage = document.getElementById('copyMessage');
@@ -47,21 +38,12 @@ async function bypassLink() {
         return;
     }
 
-    // Validasi URL
-    if (!isValidURL(link)) {
-        resultDiv.innerHTML = '<p class="error">Please enter a valid URL.</p>';
-        return;
-    }
-
     // Check if hCaptcha is verified
-    const hcaptchaResponse = hcaptcha.getResponse(); // Mendapatkan respon hCaptcha
+    const hcaptchaResponse = hcaptcha.getResponse();
     if (!hcaptchaResponse) {
         resultDiv.innerHTML = '<p class="error">Please complete the hCaptcha.</p>';
         return;
     }
-
-    // Baru buat URL setelah mendapatkan hcaptchaResponse
-    var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}&captcha=${encodeURIComponent(hcaptchaResponse)}`;
 
     try {
         console.log("Fetching data from API: " + apiUrl); // Log API URL
@@ -73,7 +55,7 @@ async function bypassLink() {
             },
             body: JSON.stringify({
                 link: link,
-                'h-captcha-response': hcaptchaResponse // Kirim respon hCaptcha ke server
+                'h-captcha-response': hcaptchaResponse
             })
         });
 
@@ -94,17 +76,16 @@ async function bypassLink() {
     }
 }
 
-async function copyKey() {
+function copyKey() {
     var keyText = document.getElementById('bypassedKey').innerText;
     var copyMessage = document.getElementById('copyMessage');
 
     // Copy the key to clipboard
-    try {
-        await navigator.clipboard.writeText(keyText);
+    navigator.clipboard.writeText(keyText).then(function() {
         copyMessage.innerHTML = 'Key copied to clipboard!';
-    } catch (error) {
+    }).catch(function() {
         copyMessage.innerHTML = 'Failed to copy key.';
-    }
+    });
 }
 
 // Panggil fungsi loadHCaptcha saat halaman dimuat
