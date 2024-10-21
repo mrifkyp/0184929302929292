@@ -17,6 +17,16 @@ function loadHCaptcha() {
     hcaptchaContainer.innerHTML = `<div class="h-captcha" data-sitekey="${sitekey}"></div>`;
 }
 
+// Fungsi validasi URL
+function isValidURL(string) {
+    try {
+        new URL(string);
+        return true;
+    } catch (_) {
+        return false;  
+    }
+}
+
 // Fungsi bypass link
 async function bypassLink() {
     console.log("Tombol ditekan!"); // Memastikan fungsi dijalankan
@@ -34,6 +44,12 @@ async function bypassLink() {
     // Check if the input is empty
     if (link === '') {
         resultDiv.innerHTML = '<p class="error">Please enter a URL.</p>';
+        return;
+    }
+
+    // Validasi URL
+    if (!isValidURL(link)) {
+        resultDiv.innerHTML = '<p class="error">Please enter a valid URL.</p>';
         return;
     }
 
@@ -78,16 +94,17 @@ async function bypassLink() {
     }
 }
 
-function copyKey() {
+async function copyKey() {
     var keyText = document.getElementById('bypassedKey').innerText;
     var copyMessage = document.getElementById('copyMessage');
 
     // Copy the key to clipboard
-    navigator.clipboard.writeText(keyText).then(function() {
+    try {
+        await navigator.clipboard.writeText(keyText);
         copyMessage.innerHTML = 'Key copied to clipboard!';
-    }).catch(function() {
+    } catch (error) {
         copyMessage.innerHTML = 'Failed to copy key.';
-    });
+    }
 }
 
 // Panggil fungsi loadHCaptcha saat halaman dimuat
