@@ -92,7 +92,9 @@
             font-weight: bold;
         }
     </style>
-    <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
+    <!-- Tambahkan hCaptcha library -->
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
 </head>
 <body class="bg">
 
@@ -101,15 +103,19 @@
     <p>Enter the URL:</p>
     <input type="text" id="linkInput" placeholder="Enter the URL here">
     <br>
+    <!-- Elemen hCaptcha -->
+    <div id="hcaptcha-container"></div>
+    <br>
     <button onclick="bypassLink()">Bypass</button>
 
     <div id="result"></div>
     <button id="copyButton" style="display: none;" onclick="copyKey()">Copy Key</button>
     <p id="copyMessage"></p>
-    
+
+    <!-- Support message div -->
     <div id="support-message">Support: relzhub</div>
 </div>
 
-<script src="script.js"></script> <!-- Pisahkan skrip JavaScript ke file ini -->
+<script src="script.js"></script>
 </body>
 </html>
