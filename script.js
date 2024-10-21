@@ -1,4 +1,4 @@
-const sitekey = "01e8354c-f6ea-44fe-aada-4c9893a0f7a6"; // Sitekey disembunyikan di sini
+const siteKey = '01e8354c-f6ea-44fe-aada-4c9893a0f7a6'; // Ganti dengan sitekey Hcaptcha kamu
 const supportItems = ["relzhub", "Fluxus", "Linkvertise", "sub2unlock", "Mboost", "Pastebin", "Pastedrop", "Mediafire", "Cryptic", "Codex", "Delta", "Boost.ink", "Link-center", "Link-target", "Social-unlock", "Loot-link"];
 let currentSupportIndex = 0;
 
@@ -11,18 +11,11 @@ function rotateSupport() {
 // Panggil fungsi rotasi setiap 2 detik
 setInterval(rotateSupport, 2000);
 
-// Fungsi untuk memuat hCaptcha
-function loadHCaptcha() {
-    const hcaptchaContainer = document.getElementById('hcaptcha-container');
-    hcaptchaContainer.innerHTML = `<div class="h-captcha" data-sitekey="${sitekey}"></div>`;
-}
-
-// Fungsi bypass link
+// Menyimpan sitekey dalam variabel
 async function bypassLink() {
     console.log("Tombol ditekan!"); // Memastikan fungsi dijalankan
     
     var link = document.getElementById('linkInput').value;
-    var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}`;
     var resultDiv = document.getElementById('result');
     var copyButton = document.getElementById('copyButton');
     var copyMessage = document.getElementById('copyMessage');
@@ -38,27 +31,21 @@ async function bypassLink() {
         return;
     }
 
-    // Check if hCaptcha is verified
-    const hcaptchaResponse = hcaptcha.getResponse();
-    if (!hcaptchaResponse) {
-        resultDiv.innerHTML = '<p class="error">Please complete the hCaptcha.</p>';
+    // Ambil token Hcaptcha
+    const token = await hcaptcha.execute(siteKey);
+
+    // Validasi token Hcaptcha
+    if (!token) {
+        resultDiv.innerHTML = '<p class="error">Please complete the captcha.</p>';
         return;
     }
 
+    var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}&hcaptchaToken=${token}`;
+    
     try {
         console.log("Fetching data from API: " + apiUrl); // Log API URL
         
-        const response = await fetch(apiUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                link: link,
-                'h-captcha-response': hcaptchaResponse
-            })
-        });
-
+        const response = await fetch(apiUrl);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -89,4 +76,8 @@ function copyKey() {
 }
 
 // Panggil fungsi loadHCaptcha saat halaman dimuat
-document.addEventListener('DOMContentLoaded', loadHCaptcha);
+window.onload = function() {
+    // Inisialisasi Hcaptcha tanpa elemen HTML
+    hcaptcha.render('h-captcha', { sitekey: siteKey });
+    rotateSupport();
+};
