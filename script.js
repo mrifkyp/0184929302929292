@@ -51,7 +51,7 @@ async function bypassLink() {
         console.log("Fetching data from API: " + apiUrl); // Log API URL
         
         const response = await fetch(apiUrl, {
-            method: 'POST',
+            method: 'POST',  // Pastikan metode yang digunakan sesuai dengan API
             headers: {
                 'Content-Type': 'application/json'
             },
