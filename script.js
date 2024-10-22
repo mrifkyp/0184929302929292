@@ -63,5 +63,3 @@ function copyKey() {
     });
 }
 
-// Panggil fungsi loadHCaptcha saat halaman dimuat
-window.onload = loadHCaptcha;
