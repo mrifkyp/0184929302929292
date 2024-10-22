@@ -14,15 +14,17 @@ async function bypassLink() {
     console.log("Tombol ditekan!"); // Memastikan fungsi dijalankan
     
     var link = document.getElementById('linkInput').value;
-    var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}`;
+    var apiUrl = `https://project-skybypass.vercel.app/kingbypass?link=${encodeURIComponent(link)}&captcha=${encodeURIComponent(hCaptchaResponse)}`;
     var resultDiv = document.getElementById('result');
     var copyButton = document.getElementById('copyButton');
     var copyMessage = document.getElementById('copyMessage');
+    var loadingIndicator = document.getElementById('loading');
 
     // Clear previous results and messages
     resultDiv.innerHTML = '';
     copyButton.style.display = 'none';
     copyMessage.innerHTML = '';
+    loadingIndicator.style.display = 'none';
 
     // Check if the input is empty
     if (link === '') {
@@ -30,13 +32,22 @@ async function bypassLink() {
         return;
     }
 
+    // Show loading indicator
+    loadingIndicator.style.display = 'block';
+
+    // Get hCaptcha token
+    var hCaptchaResponse = hcaptcha.getResponse();
+    if (!hCaptchaResponse) {
+        resultDiv.innerHTML = '<p class="error">Please complete the hCaptcha.</p>';
+        loadingIndicator.style.display = 'none';
+        return;
+    }
+
     try {
         console.log("Fetching data from API: " + apiUrl); // Log API URL
         
         const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+
 
         const data = await response.json();
         console.log(data.result); // Log API response data
@@ -48,6 +59,9 @@ async function bypassLink() {
     } catch (error) {
         resultDiv.innerHTML = `<p class="error">An error occurred: ${error.message}</p>`;
         console.error(error); // Log error to the console
+    } finally {
+        // Hide loading indicator
+        loadingIndicator.style.display = 'none';
     }
 }
 
@@ -62,4 +76,3 @@ function copyKey() {
         copyMessage.innerHTML = 'Failed to copy key.';
     });
 }
-
