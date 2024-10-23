@@ -92,35 +92,34 @@
             font-weight: bold;
         }
 
-        .discord-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
-
-        .discord-section p {
-            margin: 0;
-            font-size: 1rem;
-        }
-
-        .discord-button {
-            padding: 10px 20px;
-            background-color: #7289da;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .discord-button:hover {
-            background-color: #5b6eae;
-        }
-
         .loading {
             display: none;
             margin-top: 20px;
         }
+
+        /* Flexbox styling untuk tombol Join Discord */
+        .discord-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .discord-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #5865F2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .discord-button:hover {
+            background-color: #404EED;
+        }
+
     </style>
     <!-- Tambahkan hCaptcha library -->
     <script src="https://hcaptcha.com/1/api.js" async defer></script>
@@ -145,16 +144,12 @@
     <p id="copyMessage"></p>
 
     <!-- Support message div -->
-    <div id="support-message">Support: relzhub</div>
+    <div id="support-message">Support: Codex</div>
 
-    <!-- Discord buttons section -->
-    <div class="discord-section">
-        <p>Joki Bloxfruit</p>
-        <button class="discord-button" onclick="joinDiscordJoki()">Join Discord</button>
-    </div>
-    <div class="discord-section">
-        <p>Server Community</p>
-        <button class="discord-button" onclick="joinDiscordCommunity()">Join Discord</button>
+    <!-- Flexbox untuk tombol Join Discord -->
+    <div class="discord-buttons">
+        <a href="https://discord.gg/joki-link" class="discord-button" target="_blank">Joki Bloxfruit</a>
+        <a href="https://discord.gg/community-link" class="discord-button" target="_blank">Server Community</a>
     </div>
 </div>
 
