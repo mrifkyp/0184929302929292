@@ -92,8 +92,19 @@
             font-weight: bold;
         }
 
-        #discordButton {
+        .discord-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             margin-top: 20px;
+        }
+
+        .discord-section p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .discord-button {
             padding: 10px 20px;
             background-color: #7289da;
             color: white;
@@ -102,7 +113,7 @@
             cursor: pointer;
         }
 
-        #discordButton:hover {
+        .discord-button:hover {
             background-color: #5b6eae;
         }
 
@@ -136,8 +147,15 @@
     <!-- Support message div -->
     <div id="support-message">Support: relzhub</div>
 
-    <!-- Tombol Join Discord -->
-    <button id="discordButton" onclick="joinDiscord()">Join Discord Server</button>
+    <!-- Discord buttons section -->
+    <div class="discord-section">
+        <p>Joki Bloxfruit</p>
+        <button class="discord-button" onclick="joinDiscordJoki()">Join Discord</button>
+    </div>
+    <div class="discord-section">
+        <p>Server Community</p>
+        <button class="discord-button" onclick="joinDiscordCommunity()">Join Discord</button>
+    </div>
 </div>
 
 <script src="./script.js"></script>
