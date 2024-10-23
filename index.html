@@ -92,6 +92,20 @@
             font-weight: bold;
         }
 
+        #discordButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #7289da;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #discordButton:hover {
+            background-color: #5b6eae;
+        }
+
         .loading {
             display: none;
             margin-top: 20px;
@@ -121,6 +135,9 @@
 
     <!-- Support message div -->
     <div id="support-message">Support: relzhub</div>
+
+    <!-- Tombol Join Discord -->
+    <button id="discordButton" onclick="joinDiscord()">Join Discord Server</button>
 </div>
 
 <script src="./script.js"></script>
