@@ -1,1 +1,99 @@
-var _0x3f247d=_0x3a2a;(function(_0x2c0429,_0x160d88){var _0x283a67=_0x3a2a,_0x5b17dc=_0x2c0429();while(!![]){try{var _0x2f4c42=-parseInt(_0x283a67(0xef))/0x1+-parseInt(_0x283a67(0xf4))/0x2*(parseInt(_0x283a67(0xe9))/0x3)+parseInt(_0x283a67(0xcd))/0x4+parseInt(_0x283a67(0xf3))/0x5+parseInt(_0x283a67(0xee))/0x6+parseInt(_0x283a67(0xcb))/0x7*(parseInt(_0x283a67(0x11c))/0x8)+parseInt(_0x283a67(0xd4))/0x9*(-parseInt(_0x283a67(0x10c))/0xa);if(_0x2f4c42===_0x160d88)break;else _0x5b17dc['push'](_0x5b17dc['shift']());}catch(_0x4ec988){_0x5b17dc['push'](_0x5b17dc['shift']());}}}(_0x42f0,0x54262));const supportItems=[_0x3f247d(0xda),_0x3f247d(0xe3),_0x3f247d(0x100),_0x3f247d(0xd6),_0x3f247d(0xeb),_0x3f247d(0xf0),_0x3f247d(0xfc),_0x3f247d(0xd3),_0x3f247d(0x10b),_0x3f247d(0xf5),_0x3f247d(0x110),_0x3f247d(0xf1),'Link-target',_0x3f247d(0x104),_0x3f247d(0xe0),_0x3f247d(0xde),_0x3f247d(0xe6),_0x3f247d(0x106),_0x3f247d(0xe7),_0x3f247d(0x11b),_0x3f247d(0xc9),'Rentry.org',_0x3f247d(0x101),'Tinylink.onl','Pastelink.net','Lootdest',_0x3f247d(0xd0),_0x3f247d(0x10e),'Best-links',_0x3f247d(0x115),_0x3f247d(0xff),_0x3f247d(0xe8),_0x3f247d(0xfa),_0x3f247d(0xec),_0x3f247d(0x109),_0x3f247d(0xf6),'Paster.so',_0x3f247d(0x112),'Free-leaks',_0x3f247d(0x102),'Best-links.org',_0x3f247d(0x10f),_0x3f247d(0xd7),_0x3f247d(0xf9),'Paste-drop.com',_0x3f247d(0x108),_0x3f247d(0x10d),'Ytsubme.com',_0x3f247d(0xdf),'Unlocknow.net',_0x3f247d(0xdd),_0x3f247d(0xdb),_0x3f247d(0xf8)];let currentSupportIndex=0x0;function rotateSupport(){var _0x4d8f65=_0x3f247d;const _0x1380cd=document['getElementById'](_0x4d8f65(0xd5));currentSupportIndex=(currentSupportIndex+0x1)%supportItems[_0x4d8f65(0x10a)],_0x1380cd[_0x4d8f65(0xe5)]=_0x4d8f65(0xfd)+supportItems[currentSupportIndex];}setInterval(rotateSupport,0x7d0);async function bypassLink(){var _0x82222a=_0x3f247d;console['log']('Tombol\x20ditekan!');var _0x573138=document[_0x82222a(0xd1)]('linkInput')[_0x82222a(0xd8)],_0x31e0df='https://project-skybypass.vercel.app/kingbypass?link='+encodeURIComponent(_0x573138)+_0x82222a(0xf2)+encodeURIComponent(_0xea5456),_0x161b19=document[_0x82222a(0xd1)]('result'),_0x445d49=document[_0x82222a(0xd1)](_0x82222a(0x113)),_0x6eadbd=document['getElementById'](_0x82222a(0x117)),_0x1476ea=document[_0x82222a(0xd1)](_0x82222a(0x116));_0x161b19['innerHTML']='',_0x445d49['style'][_0x82222a(0xcc)]='none',_0x6eadbd[_0x82222a(0xf7)]='',_0x1476ea[_0x82222a(0xed)][_0x82222a(0xcc)]=_0x82222a(0xca);if(_0x573138===''){_0x161b19[_0x82222a(0xf7)]=_0x82222a(0xfb);return;}_0x1476ea[_0x82222a(0xed)][_0x82222a(0xcc)]=_0x82222a(0x111);var _0xea5456=hcaptcha[_0x82222a(0xdc)]();if(!_0xea5456){_0x161b19[_0x82222a(0xf7)]=_0x82222a(0xe2),_0x1476ea[_0x82222a(0xed)][_0x82222a(0xcc)]='none';return;}try{console[_0x82222a(0x11d)](_0x82222a(0x114)+_0x31e0df);const _0x23e965=await fetch(_0x31e0df),_0x4b1467=await _0x23e965[_0x82222a(0xe4)]();console['log'](_0x4b1467[_0x82222a(0xcf)]),_0x161b19['innerHTML']=_0x82222a(0x107)+_0x4b1467[_0x82222a(0xcf)]+'</span></p>\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20',_0x445d49[_0x82222a(0xed)][_0x82222a(0xcc)]=_0x82222a(0x118);}catch(_0x2311d8){_0x161b19['innerHTML']='<p\x20class=\x22error\x22>An\x20error\x20occurred:\x20'+_0x2311d8[_0x82222a(0xce)]+_0x82222a(0xd9),console['error'](_0x2311d8);}finally{_0x1476ea[_0x82222a(0xed)]['display']=_0x82222a(0xca);}}function copyKey(){var _0x33475c=_0x3f247d,_0x1f9d55=document[_0x33475c(0xd1)](_0x33475c(0x105))[_0x33475c(0xc8)],_0x3c9012=document['getElementById'](_0x33475c(0x117));navigator[_0x33475c(0x119)]['writeText'](_0x1f9d55)[_0x33475c(0xd2)](function(){var _0xe61b74=_0x33475c;_0x3c9012[_0xe61b74(0xf7)]=_0xe61b74(0xe1);})['catch'](function(){var _0x74ce09=_0x33475c;_0x3c9012[_0x74ce09(0xf7)]=_0x74ce09(0xea);});}function _0x3a2a(_0x161f3f,_0x4cf697){var _0x42f053=_0x42f0();return _0x3a2a=function(_0x3a2a79,_0x545671){_0x3a2a79=_0x3a2a79-0xc8;var _0x3e8e2c=_0x42f053[_0x3a2a79];return _0x3e8e2c;},_0x3a2a(_0x161f3f,_0x4cf697);}function _0x42f0(){var _0xf6d1d6=['Relzhub','Nicuse','getResponse','Socialwolvez.com','Bit.ly','Direct-link.net','Loot-link','Key\x20copied\x20to\x20clipboard!','<p\x20class=\x22error\x22>Please\x20complete\x20the\x20hCaptcha.</p>','Fluxus','json','textContent','Tiny.cc','V.gd','Loot-link.com','1153443bOjnNP','Failed\x20to\x20copy\x20key.','Mboost','Direct-link','style','580572ubCpUI','136121uzrWeI','Pastebin','Link-center','&captcha=','2026200YIyzeJ','2rxVgWt','Delta','SocialWolvez','innerHTML','Controlc','Mboost.me','Ytsubme','<p\x20class=\x22error\x22>Please\x20enter\x20a\x20URL.</p>','Pastedrop','Support:\x20','open','Pastehill','Linkvertise','Rentry.co','Link-hub.net','https://discord.gg/joki-link','Social-unlock','bypassedKey','Adfoc.us','\x0a\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p><strong>Key:</strong>\x20<span\x20id=\x22bypassedKey\x22>','Free-leaks.com','Unlocknow','length','Codex','100MsxdXv','Lootdest.com','Link-hub','Sub2unlock.io','Boost.ink','block','Workink.net','copyButton','Fetching\x20data\x20from\x20API:\x20','Justpaste.it','loading','copyMessage','inline-block','clipboard','_blank','Pastefy','4863640quIlMg','log','innerText','Shorter.me','none','7itcShl','display','635636cKSylH','message','result','Work.ink','getElementById','then','Cryptic','363231bCHQcy','support-message','Sub2unlock','Sub4unlock.io','value','</p>'];_0x42f0=function(){return _0xf6d1d6;};return _0x42f0();}function joinDiscordJoki(){var _0x18684d=_0x3f247d;window[_0x18684d(0xfe)](_0x18684d(0x103),_0x18684d(0x11a));}function joinDiscordCommunity(){window['open']('https://discord.gg/community-link','_blank');}
+const supportItems = [
+    'Relzhub', 'Nicuse', 'getResponse', 'Socialwolvez.com', 
+    'Bit.ly', 'Direct-link.net', 'Loot-link', 'Tiny.cc', 'V.gd', 'Loot-link.com', 'Mboost', 
+    'Direct-link',  
+    'Pastebin', 'Link-center', 
+     'Delta', 'SocialWolvez', 'Controlc', 
+    'Mboost.me', 'Ytsubme',
+    'Pastedrop', 'Pastehill', 'Linkvertise', 
+    'Rentry.co', 'Link-hub.net',
+    'Social-unlock', 'bypassedKey', 'Adfoc.us', 
+    'Free-leaks.com', 'Unlocknow', 'Codex', 
+     'Lootdest.com', 'Link-hub', 
+    'Sub2unlock.io', 'Boost.ink', 'Workink.net', 'Justpaste.it', 'Pastefy',
+    'Shorter.me',
+   'Work.ink', 
+    'Cryptic',  'Sub2unlock', 
+    'Sub4unlock.io'
+];
+
+let currentSupportIndex = 0;
+
+function rotateSupport() {
+    const supportElement = document.getElementById('supportElementId'); // Ganti dengan ID yang sesuai
+    currentSupportIndex = (currentSupportIndex + 1) % supportItems.length;
+    supportElement.innerText = 'Link: ' + supportItems[currentSupportIndex];
+}
+
+setInterval(rotateSupport, 2000); // Mengubah dukungan setiap 2 detik
+
+async function bypassLink() {
+    console.log('Tombol ditekan!');
+    const linkInputValue = document.getElementById('linkInput').value;
+    
+    // Ambil bagian cc dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const ccEncoded = urlParams.get('cc'); // Mendapatkan parameter cc
+    const ccDecoded = ccEncoded ? atob(ccEncoded) : ''; // Dekode dari base64
+    
+    const apiUrl = 'https://project-skybypass.vercel.app/kingbypass?link=' + encodeURIComponent(linkInputValue) + '&captcha=' + encodeURIComponent(hcaptcha.getResponse()) + '&cc=' + encodeURIComponent(ccDecoded);
+
+    const resultElement = document.getElementById('result');
+    const copyButton = document.getElementById('copyButton');
+    const loadingElement = document.getElementById('loading');
+    const errorElement = document.getElementById('error');
+
+    resultElement.innerHTML = '';
+    copyButton.style.display = 'none';
+    loadingElement.innerText = '';
+    errorElement.style.display = 'block';
+
+    if (linkInputValue === '') {
+        resultElement.innerHTML = '<p class="error">Please enter a URL.</p>';
+        return;
+    }
+
+    errorElement.style.display = 'none';
+    const hcaptchaResponse = hcaptcha.getResponse();
+
+    if (!hcaptchaResponse) {
+        resultElement.innerHTML = '<p class="error">Please complete the hCaptcha.</p>';
+        errorElement.style.display = 'none';
+        return;
+    }
+
+    try {
+        console.log('Fetching data from API: ' + apiUrl);
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        console.log(data.message);
+        resultElement.innerHTML = '<p>Key: <span id="bypassedKey">' + data.message + '</span></p>';
+        copyButton.style.display = 'block';
+    } catch (error) {
+        resultElement.innerHTML = '<p class="error">An error occurred: ' + error.message + '</p>';
+        console.error(error);
+    } finally {
+        errorElement.style.display = 'block';
+    }
+}
+
+function copyKey() {
+    const keyValue = document.getElementById('bypassedKey').innerText;
+    const copyMessageElement = document.getElementById('copyMessage');
+    
+    navigator.clipboard.writeText(keyValue)
+        .then(function() {
+            copyMessageElement.innerText = 'Key copied to clipboard!';
+        })
+        .catch(function() {
+            copyMessageElement.innerText = 'Failed to copy key.';
+        });
+}
+
+function joinDiscordJoki() {
+    window.open('https://discord.gg/joki-link', '_blank');
+}
+
+function joinDiscordCommunity() {
+    window.open('https://discord.gg/community-link', '_blank');
+}
