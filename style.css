@@ -1,0 +1,142 @@
+ html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .bg {
+            background-image: url('./wl.jpg');
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: red;
+        }
+
+        #copyButton {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #copyButton:hover {
+            background-color: #0056b3;
+        }
+
+        #copyMessage {
+            margin-top: 10px;
+            color: green;
+        }
+
+        #support-message {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .loading {
+            display: none;
+            margin-top: 20px;
+        }
+
+        /* Flexbox styling untuk tombol Join Discord */
+        .discord-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .discord-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #5865F2;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .discord-button:hover {
+            background-color: #404EED;
+        }
+
+        /* Loading animation */
+        .loader {
+            width: 60px;
+            aspect-ratio: 1;
+            border: 15px solid #ddd;
+            border-radius: 50%;
+            position: relative;
+            transform: rotate(45deg);
+            margin: 0 auto; /* Center loader */
+        }
+
+        .loader::before {
+            content: "";
+            position: absolute;
+            inset: -15px;
+            border-radius: 50%;
+            border: 15px solid #514b82;
+            animation: l18 2s infinite linear;
+        }
+
+        @keyframes l18 {
+            0%   {clip-path:polygon(50% 50%,0 0,0    0,0    0   ,0    0   ,0    0   )}
+            25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0   ,100% 0   ,100% 0   )}
+            50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+            75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0    100%,0    100%)}
+            100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0    100%,0    0   )}
+        }
