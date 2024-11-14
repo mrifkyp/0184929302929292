@@ -118,7 +118,7 @@
   width: 120px;
   height: 20px;
   -webkit-mask: radial-gradient(circle closest-side,#000 94%,#0000) left/20% 100%;
-  background: linear-gradient(#23395B, #355773, #5A7D9A, #87A3C1) left/0% 100% no-repeat #ddd;
+  background: #539AB0 left/0% 100% no-repeat #ddd;
   animation: l17 2s infinite steps(6);
   margin: 0 auto;
 }
